@@ -1,0 +1,459 @@
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 15;
+
+  display: flex;
+  height: var(--topbar-height);
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+
+  padding: 0 32px;
+
+  background: rgba(255, 255, 255, 0.96);
+  border-bottom: 1px solid var(--color-border);
+  backdrop-filter: blur(12px);
+}
+
+.topbar__context {
+  min-width: 210px;
+}
+
+.topbar__context span,
+.topbar__context strong {
+  display: block;
+}
+
+.topbar__context span {
+  margin-bottom: 4px;
+  color: var(--color-text-muted);
+  font-size: 11px;
+}
+
+.topbar__context strong {
+  color: var(--color-text);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.topbar__actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.topbar__search {
+  display: flex;
+  width: min(300px, 24vw);
+  height: 40px;
+  align-items: center;
+  gap: 9px;
+
+  padding: 0 13px;
+
+  color: var(--color-text-muted);
+  background: var(--color-surface-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+}
+
+.topbar__search:focus-within {
+  background: #ffffff;
+  border-color: rgba(201, 32, 38, 0.45);
+  box-shadow: 0 0 0 3px rgba(201, 32, 38, 0.08);
+}
+
+.topbar__search input {
+  width: 100%;
+  min-width: 0;
+  padding: 0;
+
+  color: var(--color-text);
+  background: transparent;
+  border: 0;
+  outline: 0;
+
+  font-size: 12px;
+}
+
+.topbar__search input::placeholder {
+  color: #98a3b2;
+}
+
+.topbar__date {
+  display: flex;
+  height: 40px;
+  align-items: center;
+  gap: 8px;
+
+  padding: 0 12px;
+
+  color: var(--color-text-secondary);
+  border-left: 1px solid var(--color-border);
+
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.topbar__notification {
+  position: relative;
+
+  display: grid;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  place-items: center;
+
+  color: var(--color-text-secondary);
+  background: #ffffff;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+}
+
+.topbar__notification:hover {
+  color: var(--color-primary);
+  background: var(--color-primary-soft);
+}
+
+.topbar__notification-dot {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+
+  width: 7px;
+  height: 7px;
+
+  background: var(--color-primary);
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+}
+
+.topbar__site {
+  display: grid;
+  min-width: 152px;
+  height: 44px;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 9px;
+
+  padding: 0 11px;
+
+  text-align: left;
+  background: #ffffff;
+  border: 1px solid var(--color-border);
+  border-radius: 11px;
+}
+
+.topbar__site:hover {
+  border-color: var(--color-border-strong);
+  box-shadow: var(--shadow-small);
+}
+
+.topbar__site-indicator {
+  width: 8px;
+  height: 8px;
+
+  background: #22c55e;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px #ecfdf3;
+}
+
+.topbar__site small,
+.topbar__site strong {
+  display: block;
+}
+
+.topbar__site small {
+  margin-bottom: 2px;
+  color: var(--color-text-muted);
+  font-size: 9px;
+}
+
+.topbar__site strong {
+  color: var(--color-text);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+@media (max-width: 1200px) {
+  .topbar {
+    padding: 0 24px;
+  }
+
+  .topbar__date {
+    display: none;
+  }
+
+  .topbar__search {
+    width: 230px;
+  }
+}
+
+/* =========================================================
+   MODE SOMBRE — TOPBAR
+   À ajouter à la fin de Topbar.css
+========================================================= */
+
+:root[data-theme="dark"] .topbar {
+  border-bottom-color: #26364b;
+  background: rgba(13, 24, 40, 0.96);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+:root[data-theme="dark"] .topbar__context span {
+  color: #8496af;
+}
+
+:root[data-theme="dark"] .topbar__context strong {
+  color: #f1f5fb;
+}
+
+:root[data-theme="dark"] .topbar__search {
+  border-color: #334158;
+  color: #91a2b9;
+  background: #111c2d;
+}
+
+:root[data-theme="dark"] .topbar__search:focus-within {
+  border-color: #b9434c;
+  background: #172338;
+  box-shadow: 0 0 0 3px rgba(239, 57, 69, 0.1);
+}
+
+:root[data-theme="dark"] .topbar__search input {
+  color: #e8eef8;
+}
+
+:root[data-theme="dark"] .topbar__search input::placeholder {
+  color: #718299;
+}
+
+:root[data-theme="dark"] .topbar__date {
+  border-left-color: #29384d;
+  color: #a5b3c6;
+}
+
+:root[data-theme="dark"] .topbar__notification,
+:root[data-theme="dark"] .topbar__site {
+  border-color: #334158;
+  color: #b9c6d7;
+  background: #111c2d;
+}
+
+:root[data-theme="dark"] .topbar__notification:hover {
+  border-color: #71313a;
+  color: #ff6570;
+  background: #321b24;
+}
+
+:root[data-theme="dark"] .topbar__notification-dot {
+  border-color: #111c2d;
+}
+
+:root[data-theme="dark"] .topbar__site:hover {
+  border-color: #455671;
+  background: #172338;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+:root[data-theme="dark"] .topbar__site-indicator {
+  box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.14);
+}
+
+:root[data-theme="dark"] .topbar__site small {
+  color: #8496af;
+}
+
+:root[data-theme="dark"] .topbar__site strong {
+  color: #f1f5fb;
+}
+
+/* =========================================================
+   CLOCHE ET PANNEAU DE NOTIFICATIONS
+   À ajouter à la fin de Topbar.css
+========================================================= */
+
+.topbar__notification-wrapper {
+  position: relative;
+}
+
+.topbar__notifications-panel {
+  position: absolute;
+  z-index: 100;
+  top: calc(100% + 12px);
+  right: 0;
+  width: min(370px, calc(100vw - 32px));
+  overflow: hidden;
+  border: 1px solid #dbe3ed;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 22px 55px rgba(15, 23, 42, 0.18);
+}
+
+.topbar__notifications-panel > header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 17px 18px;
+  border-bottom: 1px solid #e7edf4;
+}
+
+.topbar__notifications-panel > header div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.topbar__notifications-panel > header strong {
+  color: #132039;
+  font-size: 14px;
+}
+
+.topbar__notifications-panel > header span {
+  color: #8492a7;
+  font-size: 10px;
+}
+
+.topbar__notifications-panel > header b {
+  display: grid;
+  min-width: 25px;
+  height: 25px;
+  place-items: center;
+  border-radius: 999px;
+  color: #ffffff;
+  background: #dc2632;
+  font-size: 10px;
+}
+
+.topbar__notifications-list {
+  max-height: 330px;
+  overflow-y: auto;
+}
+
+.topbar__notifications-list > p {
+  margin: 0;
+  padding: 32px 20px;
+  color: #7b899d;
+  font-size: 11px;
+  text-align: center;
+}
+
+.topbar__notifications-list article {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  padding: 14px 18px;
+  border-bottom: 1px solid #edf1f6;
+}
+
+.topbar__notification-icon {
+  display: grid;
+  width: 37px;
+  height: 37px;
+  flex: 0 0 37px;
+  place-items: center;
+  border-radius: 11px;
+}
+
+.topbar__notification-icon--fire {
+  color: #dc2632;
+  background: #fff0f1;
+}
+
+.topbar__notification-icon--smoke {
+  color: #d97706;
+  background: #fff6e7;
+}
+
+.topbar__notifications-list article > div {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.topbar__notifications-list article strong {
+  color: #17233a;
+  font-size: 11px;
+}
+
+.topbar__notifications-list article span,
+.topbar__notifications-list article small {
+  color: #8492a7;
+  font-size: 9px;
+}
+
+.topbar__notifications-panel > button {
+  width: 100%;
+  min-height: 43px;
+  border: 0;
+  border-top: 1px solid #e7edf4;
+  color: #dc2632;
+  background: #fff7f7;
+  font: inherit;
+  font-size: 11px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.topbar__notifications-panel > button:hover {
+  background: #ffeded;
+}
+
+/* Mode sombre */
+
+:root[data-theme="dark"] .topbar__notifications-panel {
+  border-color: #334158;
+  background: #111c2d;
+  box-shadow: 0 22px 55px rgba(0, 0, 0, 0.38);
+}
+
+:root[data-theme="dark"] .topbar__notifications-panel > header,
+:root[data-theme="dark"] .topbar__notifications-list article,
+:root[data-theme="dark"] .topbar__notifications-panel > button {
+  border-color: #29384d;
+}
+
+:root[data-theme="dark"] .topbar__notifications-panel > header strong,
+:root[data-theme="dark"] .topbar__notifications-list article strong {
+  color: #f4f7fc;
+}
+
+:root[data-theme="dark"] .topbar__notifications-panel > header span,
+:root[data-theme="dark"] .topbar__notifications-list article span,
+:root[data-theme="dark"] .topbar__notifications-list article small,
+:root[data-theme="dark"] .topbar__notifications-list > p {
+  color: #91a2b9;
+}
+
+:root[data-theme="dark"] .topbar__notification-icon--fire {
+  color: #fb7185;
+  background: #3b202b;
+}
+
+:root[data-theme="dark"] .topbar__notification-icon--smoke {
+  color: #fbbf24;
+  background: #3b3020;
+}
+
+:root[data-theme="dark"] .topbar__notifications-panel > button {
+  color: #ff6570;
+  background: #321b24;
+}
+
+:root[data-theme="dark"] .topbar__notifications-panel > button:hover {
+  background: #40202a;
+}
+
+@media (max-width: 700px) {
+  .topbar__notifications-panel {
+    position: fixed;
+    top: calc(var(--topbar-height) + 10px);
+    right: 16px;
+    left: 16px;
+    width: auto;
+  }
+}

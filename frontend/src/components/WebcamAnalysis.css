@@ -1,0 +1,521 @@
+.webcam-analysis {
+  width: 100%;
+  padding: 26px;
+  border: 1px solid var(--color-border);
+  border-radius: 22px;
+  background: var(--color-surface);
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.07);
+}
+
+.webcam-analysis__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 22px;
+}
+
+.webcam-analysis__eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 8px;
+  color: var(--color-primary);
+  font-size: 10px;
+  font-weight: 850;
+  letter-spacing: 0.13em;
+}
+
+.webcam-analysis__header h2,
+.webcam-analysis__panel h3 {
+  margin: 0;
+  color: var(--color-text);
+  letter-spacing: -0.025em;
+}
+
+.webcam-analysis__header h2 {
+  font-size: 24px;
+}
+
+.webcam-analysis__header p,
+.webcam-analysis__panel p {
+  margin: 5px 0 0;
+  color: var(--color-text-muted);
+  font-size: 11px;
+}
+
+.webcam-analysis__live {
+  display: inline-flex;
+  min-height: 34px;
+  align-items: center;
+  gap: 8px;
+  padding: 0 12px;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  background: var(--color-surface-secondary);
+  color: var(--color-text-muted);
+  font-size: 9px;
+  font-weight: 850;
+}
+
+.webcam-analysis__live i,
+.webcam-analysis__connection i,
+.webcam-analysis__video-overlay i,
+.webcam-analysis__footer-status i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #94a3b8;
+}
+
+.webcam-analysis__live--active {
+  border-color: #9ee1bf;
+  background: #eafaf2;
+  color: #07834f;
+}
+
+.webcam-analysis__live--active i,
+.webcam-analysis__connection i,
+.webcam-analysis__video-overlay i,
+.webcam-analysis__footer-status i.is-online {
+  background: #16c875;
+  box-shadow: 0 0 0 4px rgba(22, 200, 117, 0.13);
+}
+
+.webcam-analysis__error,
+.webcam-analysis__incident-banner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+  padding: 14px 16px;
+  border-radius: 13px;
+}
+
+.webcam-analysis__error {
+  border: 1px solid #fecdd3;
+  background: #fff1f2;
+  color: #be123c;
+  font-size: 11px;
+}
+
+.webcam-analysis__incident-banner {
+  border: 1px solid #ff9da5;
+  background: linear-gradient(90deg, #fff0f2, #fff8f8);
+  color: #c91d29;
+  box-shadow: 0 9px 25px rgba(220, 38, 38, 0.08);
+}
+
+.webcam-analysis__incident-banner > span {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  place-items: center;
+  border-radius: 12px;
+  background: #ffdfe3;
+}
+
+.webcam-analysis__incident-banner > div {
+  display: grid;
+  flex: 1;
+  gap: 3px;
+}
+
+.webcam-analysis__incident-banner strong {
+  font-size: 12px;
+}
+
+.webcam-analysis__incident-banner small {
+  color: #9f4550;
+  font-size: 10px;
+}
+
+.webcam-analysis__incident-banner button {
+  min-height: 34px;
+  padding: 0 12px;
+  border: 1px solid #e52b37;
+  border-radius: 9px;
+  background: transparent;
+  color: #d51f2b;
+  font: inherit;
+  font-size: 10px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.webcam-analysis__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.webcam-analysis__panel {
+  min-width: 0;
+  overflow: hidden;
+  padding: 17px;
+  border: 1px solid var(--color-border);
+  border-radius: 17px;
+  background: var(--color-surface-secondary);
+}
+
+.webcam-analysis__panel-header,
+.webcam-analysis__result-header,
+.webcam-analysis__panel-header > div,
+.webcam-analysis__result-title {
+  display: flex;
+  align-items: center;
+}
+
+.webcam-analysis__panel-header,
+.webcam-analysis__result-header {
+  min-height: 48px;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.webcam-analysis__panel-header > div,
+.webcam-analysis__result-title {
+  gap: 10px;
+}
+
+.webcam-analysis__panel h3 {
+  font-size: 13px;
+}
+
+.webcam-analysis__panel-icon {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  flex: 0 0 38px;
+  place-items: center;
+  border-radius: 11px;
+  background: #eaf2ff;
+  color: #2872e8;
+}
+
+.webcam-analysis__panel-icon--ai {
+  background: #f1ebff;
+  color: #7c3aed;
+}
+
+.webcam-analysis__connection {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--color-text-muted);
+  font-size: 9px;
+  font-weight: 750;
+}
+
+.webcam-analysis__video,
+.webcam-analysis__annotated,
+.webcam-analysis__empty {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 1px solid #26384f;
+  border-radius: 14px;
+  background: #081321;
+}
+
+.webcam-analysis__video video,
+.webcam-analysis__annotated img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.webcam-analysis__placeholder,
+.webcam-analysis__empty {
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 9px;
+  color: #8291a7;
+  text-align: center;
+}
+
+.webcam-analysis__placeholder {
+  position: absolute;
+  inset: 0;
+}
+
+.webcam-analysis__placeholder strong {
+  color: #dce5f2;
+  font-size: 13px;
+}
+
+.webcam-analysis__placeholder span,
+.webcam-analysis__empty span {
+  max-width: 260px;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.webcam-analysis__video-overlay {
+  position: absolute;
+  inset: 12px 12px auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff;
+}
+
+.webcam-analysis__video-overlay span {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: rgba(7, 18, 32, 0.82);
+  font-size: 9px;
+  font-weight: 850;
+}
+
+.webcam-analysis__video-overlay small {
+  padding: 6px 9px;
+  border-radius: 8px;
+  background: rgba(7, 18, 32, 0.7);
+  font-size: 8px;
+}
+
+.webcam-analysis__button {
+  display: flex;
+  width: 100%;
+  height: 45px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 13px;
+  border: 0;
+  border-radius: 11px;
+  background: var(--color-primary);
+  color: #fff;
+  font: inherit;
+  font-size: 11px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 9px 20px rgba(227, 31, 43, 0.18);
+}
+
+.webcam-analysis__button--stop {
+  border: 1px solid #f1a8af;
+  background: transparent;
+  color: #df202c;
+  box-shadow: none;
+}
+
+.webcam-analysis__button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.webcam-analysis__state {
+  display: flex;
+  min-height: 67px;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 13px;
+  padding: 13px 15px;
+  border: 1px solid #b9e7ce;
+  border-radius: 13px;
+  background: #effbf5;
+  color: #07834f;
+}
+
+.webcam-analysis__state--danger {
+  border-color: #ff9ea6;
+  background: #fff0f2;
+  color: #dc2430;
+}
+
+.webcam-analysis__state > div {
+  display: grid;
+  gap: 3px;
+}
+
+.webcam-analysis__state strong {
+  font-size: 12px;
+}
+
+.webcam-analysis__state span {
+  color: var(--color-text-secondary);
+  font-size: 9px;
+}
+
+.webcam-analysis__metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 9px;
+  margin-top: 13px;
+}
+
+.webcam-analysis__metrics > div {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 9px;
+  padding: 11px;
+  border: 1px solid var(--color-border);
+  border-radius: 11px;
+  background: var(--color-surface);
+  color: var(--color-primary);
+}
+
+.webcam-analysis__metrics > div:nth-child(2) {
+  color: #d97706;
+}
+
+.webcam-analysis__metrics > div:nth-child(3) {
+  color: #2872e8;
+}
+
+.webcam-analysis__metrics span {
+  display: grid;
+  min-width: 0;
+  gap: 3px;
+}
+
+.webcam-analysis__metrics small {
+  overflow: hidden;
+  color: var(--color-text-muted);
+  font-size: 8px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.webcam-analysis__metrics strong {
+  color: var(--color-text);
+  font-size: 12px;
+}
+
+.webcam-analysis__footer-status {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 13px;
+  color: var(--color-text-muted);
+  font-size: 8px;
+}
+
+.webcam-analysis__footer-status span {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+:root[data-theme="dark"] .webcam-analysis {
+  border-color: #293950;
+  background: #111d2e;
+  color: #f4f7fc;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.24);
+}
+
+:root[data-theme="dark"] .webcam-analysis__header h2,
+:root[data-theme="dark"] .webcam-analysis__panel h3,
+:root[data-theme="dark"] .webcam-analysis__placeholder strong,
+:root[data-theme="dark"] .webcam-analysis__metrics strong {
+  color: #f4f7fc;
+}
+
+:root[data-theme="dark"] .webcam-analysis__header p,
+:root[data-theme="dark"] .webcam-analysis__panel p,
+:root[data-theme="dark"] .webcam-analysis__connection,
+:root[data-theme="dark"] .webcam-analysis__placeholder span,
+:root[data-theme="dark"] .webcam-analysis__empty span,
+:root[data-theme="dark"] .webcam-analysis__metrics small,
+:root[data-theme="dark"] .webcam-analysis__footer-status {
+  color: #9aabc2;
+}
+
+:root[data-theme="dark"] .webcam-analysis__panel {
+  border-color: #2b3b52;
+  background: #152237;
+}
+
+:root[data-theme="dark"] .webcam-analysis__live {
+  border-color: #34445b;
+  background: #1b2a40;
+  color: #a8b7ca;
+}
+
+:root[data-theme="dark"] .webcam-analysis__live--active {
+  border-color: #206447;
+  background: #13372c;
+  color: #4bdea3;
+}
+
+:root[data-theme="dark"] .webcam-analysis__panel-icon {
+  background: #19365d;
+  color: #69a5ff;
+}
+
+:root[data-theme="dark"] .webcam-analysis__panel-icon--ai {
+  background: #332854;
+  color: #c5a9ff;
+}
+
+:root[data-theme="dark"] .webcam-analysis__state {
+  border-color: #205b44;
+  background: #13362c;
+  color: #49dca1;
+}
+
+:root[data-theme="dark"] .webcam-analysis__state span {
+  color: #91b8aa;
+}
+
+:root[data-theme="dark"] .webcam-analysis__state--danger,
+:root[data-theme="dark"] .webcam-analysis__incident-banner {
+  border-color: #71313a;
+  background: linear-gradient(90deg, #3a1c25, #251a25);
+  color: #ff6975;
+}
+
+:root[data-theme="dark"] .webcam-analysis__incident-banner small {
+  color: #d8969d;
+}
+
+:root[data-theme="dark"] .webcam-analysis__metrics > div {
+  border-color: #2c3b52;
+  background: #19273c;
+}
+
+:root[data-theme="dark"] .webcam-analysis__video,
+:root[data-theme="dark"] .webcam-analysis__annotated,
+:root[data-theme="dark"] .webcam-analysis__empty {
+  border-color: #30445e;
+  background: #081321;
+}
+
+@media (max-width: 1050px) {
+  .webcam-analysis__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 650px) {
+  .webcam-analysis {
+    padding: 17px;
+  }
+
+  .webcam-analysis__header,
+  .webcam-analysis__incident-banner {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .webcam-analysis__metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .webcam-analysis__video-overlay small,
+  .webcam-analysis__connection {
+    display: none;
+  }
+}

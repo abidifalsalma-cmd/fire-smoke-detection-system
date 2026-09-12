@@ -1,0 +1,456 @@
+.camera-monitoring__add {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 16px;
+  border: 1px solid #d91f2b;
+  border-radius: 12px;
+  background: #ffffff;
+  color: #d91f2b;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.camera-monitoring__add:hover:not(:disabled) {
+  background: #fff1f2;
+  transform: translateY(-1px);
+}
+
+.camera-monitoring__add:disabled,
+.monitor-camera-card__toggle:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.camera-monitoring__success {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+  padding: 13px 16px;
+  border: 1px solid #b7e4ce;
+  border-radius: 12px;
+  background: #effcf5;
+  color: #078552;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.monitor-camera-card__toggle {
+  display: inline-flex;
+  min-height: 32px;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 0 10px;
+  border: 1px solid #d7e0eb;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #65758d;
+  font: inherit;
+  font-size: 10px;
+  font-weight: 750;
+  cursor: pointer;
+}
+
+.monitor-camera-card__toggle:hover:not(:disabled) {
+  border-color: #ef9aa1;
+  background: #fff4f5;
+  color: #d91f2b;
+}
+
+.monitor-camera-card--offline {
+  opacity: 0.82;
+}
+
+.camera-monitoring__disabled {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 15px;
+  border: 1px solid #d8e1ec;
+  border-radius: 12px;
+  background: #ffffff;
+  color: #5f7089;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.camera-monitoring__disabled:hover:not(:disabled) {
+  border-color: #aebdce;
+  background: #f8fafc;
+  color: #263750;
+  transform: translateY(-1px);
+}
+
+.camera-monitoring__disabled:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.disabled-camera-list {
+  display: grid;
+  gap: 12px;
+  padding: 22px 26px 26px;
+}
+
+.disabled-camera-item {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 13px;
+  padding: 14px;
+  border: 1px solid #dce4ee;
+  border-radius: 13px;
+  background: #f8fafc;
+}
+
+.disabled-camera-item__icon {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  border-radius: 11px;
+  background: #e9eef5;
+  color: #718198;
+}
+
+.disabled-camera-item__content {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.disabled-camera-item__content strong {
+  color: #17243c;
+  font-size: 13px;
+}
+
+.disabled-camera-item__content span {
+  overflow: hidden;
+  color: #7c8ca3;
+  font-size: 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.disabled-camera-item > button {
+  display: inline-flex;
+  min-height: 38px;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 0 13px;
+  border: 1px solid #0a9b63;
+  border-radius: 10px;
+  background: #effcf5;
+  color: #078552;
+  font: inherit;
+  font-size: 11px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.disabled-camera-item > button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.disabled-camera-list__empty {
+  display: grid;
+  min-height: 190px;
+  place-content: center;
+  justify-items: center;
+  gap: 8px;
+  color: #8291a7;
+  text-align: center;
+}
+
+.disabled-camera-list__empty strong {
+  color: #263750;
+  font-size: 14px;
+}
+
+.disabled-camera-list__empty span {
+  font-size: 11px;
+}
+
+.camera-management-modal {
+  position: fixed;
+  z-index: 80;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: rgba(5, 13, 27, 0.72);
+  backdrop-filter: blur(7px);
+}
+
+.camera-management-modal__content {
+  width: min(620px, 100%);
+  max-height: calc(100vh - 48px);
+  overflow-y: auto;
+  border: 1px solid #d8e1ec;
+  border-radius: 20px;
+  background: #ffffff;
+  box-shadow: 0 28px 75px rgba(7, 20, 43, 0.3);
+}
+
+.camera-management-modal__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 24px 26px 20px;
+  border-bottom: 1px solid #e8edf4;
+}
+
+.camera-management-modal__header span {
+  color: #e31f2b;
+  font-size: 10px;
+  font-weight: 850;
+  letter-spacing: 0.13em;
+}
+
+.camera-management-modal__header h2 {
+  margin: 6px 0 4px;
+  color: #0b1736;
+  font-size: 23px;
+  letter-spacing: -0.035em;
+}
+
+.camera-management-modal__header p {
+  margin: 0;
+  color: #7c8ca3;
+  font-size: 11px;
+}
+
+.camera-management-modal__header > button {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  flex: 0 0 38px;
+  padding: 0;
+  place-items: center;
+  border: 1px solid #dce4ee;
+  border-radius: 10px;
+  background: #f8fafc;
+  color: #687991;
+  cursor: pointer;
+}
+
+.camera-management-modal__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  padding: 24px 26px;
+}
+
+.camera-management-modal__grid label {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.camera-management-modal__wide {
+  grid-column: 1 / -1;
+}
+
+.camera-management-modal__grid label > span {
+  color: #2b3b55;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.camera-management-modal__grid input,
+.camera-management-modal__grid select {
+  width: 100%;
+  height: 47px;
+  padding: 0 13px;
+  border: 1px solid #d8e1ec;
+  border-radius: 11px;
+  outline: 0;
+  background: #f8fafc;
+  color: #1d2c45;
+  font: inherit;
+  font-size: 12px;
+}
+
+.camera-management-modal__grid input:focus,
+.camera-management-modal__grid select:focus {
+  border-color: #e31f2b;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(227, 31, 43, 0.08);
+}
+
+.camera-management-modal__grid small {
+  color: #8a98ad;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.camera-management-modal__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 11px;
+  padding: 18px 26px 24px;
+  border-top: 1px solid #e8edf4;
+}
+
+.camera-management-modal__actions button {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 17px;
+  border-radius: 11px;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.camera-management-modal__cancel {
+  border: 1px solid #d8e1ec;
+  background: #ffffff;
+  color: #61718a;
+}
+
+.camera-management-modal__save {
+  border: 1px solid #df202c;
+  background: #df202c;
+  color: #ffffff;
+  box-shadow: 0 10px 22px rgba(223, 32, 44, 0.2);
+}
+
+.camera-management-modal__actions button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+:root[data-theme="dark"] .camera-monitoring__add,
+:root[data-theme="dark"] .camera-monitoring__disabled,
+:root[data-theme="dark"] .monitor-camera-card__toggle {
+  border-color: #3a4960;
+  background: #17243a;
+  color: #e5edf8;
+}
+
+:root[data-theme="dark"] .disabled-camera-item {
+  border-color: #2c3b51;
+  background: #17243a;
+}
+
+:root[data-theme="dark"] .disabled-camera-item__icon {
+  background: #223149;
+  color: #aab8ca;
+}
+
+:root[data-theme="dark"] .disabled-camera-item__content strong,
+:root[data-theme="dark"] .disabled-camera-list__empty strong {
+  color: #f1f5fb;
+}
+
+:root[data-theme="dark"] .disabled-camera-item > button {
+  border-color: #218861;
+  background: #113128;
+  color: #55d9a2;
+}
+
+@media (max-width: 620px) {
+  .disabled-camera-item {
+    grid-template-columns: 42px minmax(0, 1fr);
+  }
+
+  .disabled-camera-item > button {
+    grid-column: 1 / -1;
+  }
+}
+
+:root[data-theme="dark"] .camera-monitoring__add {
+  border-color: #d63b47;
+  color: #ff6470;
+}
+
+:root[data-theme="dark"] .camera-monitoring__success {
+  border-color: #1d664d;
+  background: #102d27;
+  color: #49d69b;
+}
+
+:root[data-theme="dark"] .camera-management-modal__content {
+  border-color: #2c3b51;
+  background: #111d2e;
+}
+
+:root[data-theme="dark"] .camera-management-modal__header,
+:root[data-theme="dark"] .camera-management-modal__actions {
+  border-color: #2a384d;
+}
+
+:root[data-theme="dark"] .camera-management-modal__header h2,
+:root[data-theme="dark"] .camera-management-modal__grid label > span {
+  color: #f1f5fb;
+}
+
+:root[data-theme="dark"] .camera-management-modal__header p,
+:root[data-theme="dark"] .camera-management-modal__grid small {
+  color: #8fa0b7;
+}
+
+:root[data-theme="dark"] .camera-management-modal__header > button,
+:root[data-theme="dark"] .camera-management-modal__grid input,
+:root[data-theme="dark"] .camera-management-modal__grid select,
+:root[data-theme="dark"] .camera-management-modal__cancel {
+  border-color: #34445c;
+  background: #172438;
+  color: #e6edf7;
+}
+
+@media (max-width: 760px) {
+  .camera-monitoring__add {
+    flex: 1;
+  }
+
+  .camera-management-modal {
+    padding: 14px;
+  }
+
+  .camera-management-modal__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .camera-management-modal__wide {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 520px) {
+  .camera-management-modal__header,
+  .camera-management-modal__grid,
+  .camera-management-modal__actions {
+    padding-right: 18px;
+    padding-left: 18px;
+  }
+
+  .camera-management-modal__actions {
+    flex-direction: column-reverse;
+  }
+
+  .camera-management-modal__actions button {
+    width: 100%;
+  }
+}

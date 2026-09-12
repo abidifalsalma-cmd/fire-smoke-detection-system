@@ -1,0 +1,299 @@
+.sidebar {
+  position: fixed;
+  inset: 0 auto 0 0;
+  z-index: 20;
+
+  display: flex;
+  width: var(--sidebar-width);
+  flex-direction: column;
+
+  padding: 22px 16px 16px;
+
+  color: #dce3ec;
+  background:
+    linear-gradient(
+      180deg,
+      #111827 0%,
+      #101722 60%,
+      #0c121c 100%
+    );
+
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.sidebar__brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  min-height: 52px;
+  padding: 0 8px;
+}
+
+.sidebar__brand-icon {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+
+  color: #ffffff;
+  background: var(--color-primary);
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(201, 32, 38, 0.28);
+}
+
+.sidebar__brand strong,
+.sidebar__brand span {
+  display: block;
+}
+
+.sidebar__brand strong {
+  color: #ffffff;
+  font-size: 15px;
+  letter-spacing: 0.08em;
+}
+
+.sidebar__brand span {
+  margin-top: 2px;
+  color: #94a3b8;
+  font-size: 12px;
+}
+
+.sidebar__status {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: 32px 1fr auto;
+  align-items: center;
+  gap: 9px;
+
+  margin: 22px 2px 26px;
+  padding: 12px;
+
+  background: rgba(255, 255, 255, 0.045);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 12px;
+}
+
+.sidebar__status-icon {
+  display: grid;
+  width: 32px;
+  height: 32px;
+  place-items: center;
+
+  color: #4ade80;
+  background: rgba(34, 197, 94, 0.12);
+  border-radius: 9px;
+}
+
+.sidebar__status strong,
+.sidebar__status span {
+  display: block;
+}
+
+.sidebar__status strong {
+  color: #f8fafc;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.sidebar__status div span {
+  margin-top: 3px;
+  color: #8492a6;
+  font-size: 10px;
+}
+
+.sidebar__status-dot {
+  width: 7px;
+  height: 7px;
+
+  background: #22c55e;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.1);
+}
+
+.sidebar__navigation {
+  overflow-y: auto;
+  padding: 0 2px 20px;
+}
+
+.sidebar__group + .sidebar__group {
+  margin-top: 24px;
+}
+
+.sidebar__group-title {
+  margin: 0 10px 8px;
+
+  color: #64748b;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.sidebar__links {
+  display: grid;
+  gap: 4px;
+}
+
+.sidebar__link {
+  position: relative;
+
+  display: flex;
+  min-height: 42px;
+  align-items: center;
+  gap: 12px;
+
+  padding: 0 12px;
+
+  color: #9cabbc;
+  border-radius: 10px;
+
+  font-size: 13px;
+  font-weight: 500;
+
+  transition:
+    color 160ms ease,
+    background-color 160ms ease,
+    transform 160ms ease;
+}
+
+.sidebar__link:hover {
+  color: #f8fafc;
+  background: rgba(255, 255, 255, 0.055);
+}
+
+.sidebar__link--active {
+  color: #ffffff;
+  background: rgba(201, 32, 38, 0.16);
+}
+
+.sidebar__link--active::before {
+  position: absolute;
+  left: 0;
+
+  width: 3px;
+  height: 22px;
+
+  content: "";
+  background: var(--color-primary);
+  border-radius: 0 4px 4px 0;
+}
+
+.sidebar__link--active svg {
+  color: #f05358;
+}
+
+.sidebar__footer {
+  margin-top: auto;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.sidebar__profile {
+  display: grid;
+  grid-template-columns: 36px 1fr 30px;
+  align-items: center;
+  gap: 9px;
+}
+
+.sidebar__avatar {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+
+  color: #ffffff;
+  background: #334155;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.sidebar__profile-text {
+  min-width: 0;
+}
+
+.sidebar__profile-text strong,
+.sidebar__profile-text span {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sidebar__profile-text strong {
+  color: #f1f5f9;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.sidebar__profile-text span {
+  margin-top: 3px;
+  color: #718096;
+  font-size: 10px;
+}
+
+.sidebar__logout {
+  display: grid;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  place-items: center;
+
+  color: #7f8da0;
+  background: transparent;
+  border: 0;
+  border-radius: 8px;
+}
+
+.sidebar__logout:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* =========================================================
+   LOGO OFFICIEL MENARA PREFA — EN-TÊTE DE SIDEBAR
+   À ajouter à la fin de Sidebar.css
+========================================================= */
+
+.sidebar {
+  padding-top: 0;
+}
+
+.sidebar__brand {
+  width: calc(100% + 32px);
+  min-height: 104px;
+  margin: 0 -16px;
+  padding: 0;
+}
+
+.sidebar__brand-logo {
+  display: flex;
+  width: 100%;
+  min-width: 0;
+  height: 104px;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 18px;
+  overflow: hidden;
+  border: 0;
+  border-bottom: 1px solid #e3e8ef;
+  border-radius: 0;
+  background: #ffffff;
+  box-shadow: none;
+}
+
+.sidebar__brand-logo img {
+  display: block;
+  width: 100%;
+  max-width: 245px;
+  height: 82px;
+  object-fit: contain;
+  object-position: center;
+}
+
+.sidebar__status {
+  margin-top: 20px;
+}

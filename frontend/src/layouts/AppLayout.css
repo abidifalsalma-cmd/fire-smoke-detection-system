@@ -1,0 +1,41 @@
+.app-shell {
+  display: flex;
+  min-height: 100vh;
+  background: var(--color-background);
+  transition: background-color 0.2s ease;
+}
+
+.app-workspace {
+  min-width: 0;
+  min-height: 100vh;
+  margin-left: var(--sidebar-width);
+  flex: 1;
+  background: var(--color-background);
+  transition: background-color 0.2s ease;
+}
+
+.app-content {
+  min-height: calc(100vh - var(--topbar-height));
+  padding: 28px 32px 40px;
+  background: var(--color-background);
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+/* Mode sombre global de l’espace de travail */
+:root[data-theme="dark"] .app-shell,
+:root[data-theme="dark"] .app-workspace,
+:root[data-theme="dark"] .app-content {
+  background: #081321;
+}
+
+:root[data-theme="dark"] .app-content {
+  color: #f4f7fc;
+}
+
+@media (max-width: 1100px) {
+  .app-content {
+    padding: 24px;
+  }
+}

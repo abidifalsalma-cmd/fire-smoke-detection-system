@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.venv/
+venv/
+venv_app/
+.env
+
+# Node
+node_modules/
+dist/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary / generated files
+uploads/*
+outputs/*
+backend/storage/image_outputs/*
+backend/storage/video_outputs/*
+backend/storage/video_uploads/*
+
+# Keep example env
+!.env.example
+
+# Logs
+*.log
